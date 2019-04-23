@@ -1,1 +1,10 @@
 C:\Users\Daniel\Desktop\Entity\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Data.dll
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Data.pdb
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Entity.dll
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Entity.pdb
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.dll
+C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.pdb

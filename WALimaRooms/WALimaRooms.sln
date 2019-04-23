@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{7533537F-CFF5-48EF-BD8E-E797A7208BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WALimaRooms", "WALimaRooms\WALimaRooms.csproj", "{ABA4BEF5-A4C7-4F12-A41A-F59D042D31EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7533537F-CFF5-48EF-BD8E-E797A7208BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7533537F-CFF5-48EF-BD8E-E797A7208BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7533537F-CFF5-48EF-BD8E-E797A7208BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA4BEF5-A4C7-4F12-A41A-F59D042D31EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA4BEF5-A4C7-4F12-A41A-F59D042D31EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA4BEF5-A4C7-4F12-A41A-F59D042D31EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA4BEF5-A4C7-4F12-A41A-F59D042D31EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
