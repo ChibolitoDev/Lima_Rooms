@@ -15,7 +15,7 @@ namespace WALimaRooms.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your aplicativo description page.";
 
             return View();
         }

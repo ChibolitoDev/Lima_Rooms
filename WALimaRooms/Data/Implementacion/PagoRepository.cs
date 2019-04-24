@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entity;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Implementaciones
 {

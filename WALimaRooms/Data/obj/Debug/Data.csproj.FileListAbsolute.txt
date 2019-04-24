@@ -8,3 +8,6 @@ C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.dll
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.pdb

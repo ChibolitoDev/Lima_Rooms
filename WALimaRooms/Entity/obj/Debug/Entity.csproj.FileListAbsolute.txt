@@ -8,3 +8,8 @@ C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debu
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.dll
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Entity\bin\Debug\Entity.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Entity\bin\Debug\Entity.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.pdb

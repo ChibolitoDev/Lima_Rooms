@@ -9,3 +9,6 @@ C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Business\bin\De
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.dll
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.pdb
