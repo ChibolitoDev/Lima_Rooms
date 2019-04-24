@@ -23,3 +23,9 @@ C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.cspr
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.csproj.CopyComplete
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.dll
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Business\obj\Debug\Business.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Business.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Business.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Data.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Entity.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Data.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Business\bin\Debug\Entity.pdb
