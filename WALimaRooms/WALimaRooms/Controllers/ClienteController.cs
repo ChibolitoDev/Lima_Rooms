@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Business.Implementacion;
 using Business;
 using Entity;
+using System.Net;
 
 namespace WALimaRooms.Controllers
 {
@@ -20,9 +21,18 @@ namespace WALimaRooms.Controllers
 
 
         // GET: Cliente/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Cliente cliente = clienteService.FindById(id);
+            if(cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
         }
 
         //Get: Cliente/Create
@@ -74,23 +84,40 @@ namespace WALimaRooms.Controllers
         }
 
         // GET: Cliente/Delete/5
-        public ActionResult Delete()
+        public ActionResult Delete(int? id, bool? saveChangesError=false)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator."; 
+            }
+            Cliente cliente = clienteService.FindById(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
         }
 
         // POST: Cliente/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
         {
             try
             {
-                return RedirectToAction("Index");
+                Cliente cliente = clienteService.FindById(id);
+                clienteService.Delete(id);
+  
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
+            return RedirectToAction("Index");
         }
     }
 }

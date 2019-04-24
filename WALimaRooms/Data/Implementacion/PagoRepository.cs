@@ -108,7 +108,32 @@ namespace Data.Implementaciones
 
         public bool update(Pago t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("update Pago set NroTransaccion=@NroTransaccion," +
+                        "                      FechaTransaccion=@FechaTransaccion, ContratoId=@ContratoId" +
+                        "                      where PagoId=@PagoId", con);
+
+                    query.Parameters.AddWithValue("@PagoId", t.PagoId);
+                    query.Parameters.AddWithValue("@NroTransaccion", t.NroTransaccion);
+                    query.Parameters.AddWithValue("@FechaTransaccion", t.FechaTransaccion);
+                    query.Parameters.AddWithValue("@ContratoId", t.Contrato.ContratoId);
+
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return rpta;
         }
     }
 }

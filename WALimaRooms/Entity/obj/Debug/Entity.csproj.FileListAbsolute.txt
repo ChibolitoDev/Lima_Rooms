@@ -15,7 +15,6 @@ C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debu
 C:\Users\Ernesto\Desktop\Aplicaciones Web\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.pdb
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\bin\Debug\Entity.dll
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\bin\Debug\Entity.pdb
-C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.csprojAssemblyReference.cache
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.dll
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Entity\obj\Debug\Entity.pdb

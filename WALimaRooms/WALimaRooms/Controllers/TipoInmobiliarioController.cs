@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Business;
@@ -15,12 +16,21 @@ namespace WALimaRooms.Controllers
         // GET: TipoInmobiliario
         public ActionResult Index()
         {
-            return View();
+            return View(tipoInmobiliarioService.FindAll());
         }
         // GET: Cliente/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            TipoInmobiliario tpInmobiliario = tipoInmobiliarioService.FindById(id);
+            if (tpInmobiliario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tpInmobiliario);
         }
 
         //Get: Cliente/Create
@@ -72,9 +82,22 @@ namespace WALimaRooms.Controllers
         }
 
         // GET: Cliente/Delete/5
-        public ActionResult Delete()
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+            TipoInmobiliario cliente = tipoInmobiliarioService.FindById(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
         }
 
         // POST: Cliente/Delete/5
@@ -83,12 +106,14 @@ namespace WALimaRooms.Controllers
         {
             try
             {
-                return RedirectToAction("Index");
+                TipoInmobiliario tipoInmobiliario = tipoInmobiliarioService.FindById(id);
+                tipoInmobiliarioService.Delete(id);
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }
+            return RedirectToAction("Index");
         }
     }
 }

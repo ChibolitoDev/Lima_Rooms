@@ -25,7 +25,7 @@ namespace Data.Implementaciones
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select * from Inmobiliaria", con);
+                    var query = new SqlCommand("select * from Inmobiliario", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -60,7 +60,7 @@ namespace Data.Implementaciones
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select * from Inmobiliaria where id ='" + id + "'", con);
+                    var query = new SqlCommand("select * from Inmobiliario where id ='" + id + "'", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -91,7 +91,7 @@ namespace Data.Implementaciones
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
-                    var query = new SqlCommand("insert into Inmobiliaria values (@NombreInmobiliario" +
+                    var query = new SqlCommand("insert into Inmobiliario values (@NombreInmobiliario" +
                         "                       ,@DireccionInmobiliario,@TipoInmobiliario_id,@Precio)", con);
                     query.Parameters.AddWithValue("@NombreInmobiliario", t.NombreInmobiliario);
                     query.Parameters.AddWithValue("@Direccion", t.DireccionInmobiliario);
@@ -114,7 +114,33 @@ namespace Data.Implementaciones
 
         public bool update(Inmobiliario t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("update Inmobiliario set NombreInmobiliario=@NombreInmobiliario," +
+                        "                       DireccionInmobiliario=@DireccionInmobiliario," +
+                        "                       TipoInmobiliario_id=@TipoInmobiliario_id,Precio=@Precio" +
+                        "                       where InmobiliarioId=@InmobiliarioId", con);
+
+                    query.Parameters.AddWithValue("@InmobiliarioId", t.InmobiliarioId);
+                    query.Parameters.AddWithValue("@NombreInmobiliario", t.NombreInmobiliario);
+                    query.Parameters.AddWithValue("@TipoInmobiliario_id", t.tipoInmobiliario.TipoInmobiliarioId);
+                    query.Parameters.AddWithValue("@Precio", t.Precio);
+
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return rpta;
         }
     }
 }
