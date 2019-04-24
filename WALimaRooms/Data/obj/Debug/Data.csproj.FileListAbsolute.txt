@@ -20,3 +20,7 @@ C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csproj.CoreC
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.dll
 C:\Users\Ernesto\Desktop\Lima_Rooms\WALimaRooms\Data\obj\Debug\Data.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Data.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Data.pdb
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Entity.dll
+C:\Users\Daniel\Desktop\Web\Lima_Rooms\WALimaRooms\Data\bin\Debug\Entity.pdb
