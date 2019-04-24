@@ -72,11 +72,11 @@ namespace Data.Implementaciones
                         }
                     }
                 }
-
-
             }
-            catch (Exception ex) { throw; }
-
+            catch (Exception ex)
+            {
+                throw;
+            }
             return tipoInmobiliario;
         }
 

@@ -18,10 +18,10 @@ namespace Data.Implementaciones
 
         public List<Inmobiliario> FindAll()
         {
-            var clientes = new List<Inmobiliario>();
+            var inmobiliarios = new List<Inmobiliario>();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
 
@@ -31,15 +31,14 @@ namespace Data.Implementaciones
                     {
                         while (dr.Read())
                         {
-                            var cliente = new Inmobiliario();
-                            cliente = new Inmobiliario();
-                            cliente.id = Convert.ToInt32(dr["id"]);
-                            cliente.Nombre = dr["Nombre"].ToString();
-                            cliente.Direccion = dr["Direccion"].ToString();
-                            cliente.tipoI.id= Convert.ToInt32(dr["TipoInmobiliario_id"]);
-                            cliente.Precio = Convert.ToInt32(dr["Precio"]);
+                            var inmobiliario = new Inmobiliario();
+                            inmobiliario.InmobiliarioId = Convert.ToInt32(dr["id"]);
+                            inmobiliario.NombreInmobiliario = dr["NombreInmobiliario"].ToString();
+                            inmobiliario.DireccionInmobiliario = dr["DireccionInmobiliario"].ToString();
+                            inmobiliario.tipoInmobiliario.NombreTipoInmobiliario = dr["TipoInmobiliario"].ToString();
+                            inmobiliario.Precio = Convert.ToInt32(dr["Precio"]);
 
-                            clientes.Add(cliente);
+                            inmobiliarios.Add(inmobiliario);
                         }
                     }
                     con.Close();
@@ -50,15 +49,15 @@ namespace Data.Implementaciones
                 throw;
             }
 
-            return clientes;
+            return inmobiliarios;
         }
 
         public Inmobiliario FindbyID(int? id)
         {
-            Inmobiliario cliente = null;
+            Inmobiliario inmobiliario = null;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("select * from Inmobiliaria where id ='" + id + "'", con);
@@ -67,12 +66,12 @@ namespace Data.Implementaciones
                     {
                         while (dr.Read())
                         {
-                            cliente = new Inmobiliario();
-                            cliente.id = Convert.ToInt32(dr["id"]);
-                            cliente.Nombre = dr["Nombre"].ToString();
-                            cliente.Direccion = dr["Direccion"].ToString();
-                            cliente.tipoI.id = Convert.ToInt32(dr["TipoInmobiliario_id"]);
-                            cliente.Precio = Convert.ToInt32(dr["Precio"]);
+                            inmobiliario = new Inmobiliario();
+                            inmobiliario.InmobiliarioId = Convert.ToInt32(dr["id"]);
+                            inmobiliario.NombreInmobiliario = dr["NombreInmobiliario"].ToString();
+                            inmobiliario.DireccionInmobiliario = dr["DireccionInmobiliario"].ToString();
+                            inmobiliario.tipoInmobiliario.NombreTipoInmobiliario = dr["TipoInmobiliario"].ToString();
+                            inmobiliario.Precio = Convert.ToInt32(dr["Precio"]);
 
                         }
                     }
@@ -82,7 +81,7 @@ namespace Data.Implementaciones
             }
             catch (Exception ex) { throw; }
 
-            return cliente;
+            return inmobiliario;
         }
 
         public bool insert(Inmobiliario t)
@@ -90,12 +89,13 @@ namespace Data.Implementaciones
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
-                    var query = new SqlCommand("insert into Inmobiliaria values (@Nombre,@Direccion,@TipoInmobiliario_id,@Precio)", con);
-                    query.Parameters.AddWithValue("@Nombre", t.Nombre);
-                    query.Parameters.AddWithValue("@Direccion", t.Direccion);
-                    query.Parameters.AddWithValue("@TipoInmobiliario_id", t.tipoI);
+                    var query = new SqlCommand("insert into Inmobiliaria values (@NombreInmobiliario" +
+                        "                       ,@DireccionInmobiliario,@TipoInmobiliario_id,@Precio)", con);
+                    query.Parameters.AddWithValue("@NombreInmobiliario", t.NombreInmobiliario);
+                    query.Parameters.AddWithValue("@Direccion", t.DireccionInmobiliario);
+                    query.Parameters.AddWithValue("@TipoInmobiliario_id", t.tipoInmobiliario.TipoInmobiliarioId);
                     query.Parameters.AddWithValue("@Precio", t.Precio);
 
 
