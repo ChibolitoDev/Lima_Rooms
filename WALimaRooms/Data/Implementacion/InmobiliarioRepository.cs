@@ -25,7 +25,7 @@ namespace Data.Implementaciones
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select * from Inmobiliario", con);
+                    var query = new SqlCommand("select * from Inmobilario", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -60,7 +60,7 @@ namespace Data.Implementaciones
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select * from Inmobiliario where id ='" + id + "'", con);
+                    var query = new SqlCommand("select * from Inmobilario where id ='" + id + "'", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -91,7 +91,7 @@ namespace Data.Implementaciones
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
-                    var query = new SqlCommand("insert into Inmobiliario values (@NombreInmobiliario" +
+                    var query = new SqlCommand("insert into Inmobilario values (@NombreInmobiliario" +
                         "                       ,@DireccionInmobiliario,@TipoInmobiliario_id,@Precio)", con);
                     query.Parameters.AddWithValue("@NombreInmobiliario", t.NombreInmobiliario);
                     query.Parameters.AddWithValue("@Direccion", t.DireccionInmobiliario);
@@ -121,7 +121,7 @@ namespace Data.Implementaciones
                 {
                     con.Open();
 
-                    var query = new SqlCommand("update Inmobiliario set NombreInmobiliario=@NombreInmobiliario," +
+                    var query = new SqlCommand("update Inmobilario set NombreInmobiliario=@NombreInmobiliario," +
                         "                       DireccionInmobiliario=@DireccionInmobiliario," +
                         "                       TipoInmobiliario_id=@TipoInmobiliario_id,Precio=@Precio" +
                         "                       where InmobiliarioId=@InmobiliarioId", con);

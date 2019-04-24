@@ -106,10 +106,9 @@ namespace Data.Implementacion
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("insert into Cliente values (@ClienteId,@NombreCliente," +
+                    var query = new SqlCommand("insert into Cliente values (@NombreCliente," +
                         "                        @apellPaterno, @apellMaterno, @Nacionalidad, @Phone," +
                         "                        @email)", con);
-                    query.Parameters.AddWithValue("ClienteId", t.ClienteId);
                     query.Parameters.AddWithValue("@NombreCliente", t.NombreCliente);
                     query.Parameters.AddWithValue("@apellPaterno", t.apellPaterno);
                     query.Parameters.AddWithValue("@apellMaterno", t.apellPaterno);

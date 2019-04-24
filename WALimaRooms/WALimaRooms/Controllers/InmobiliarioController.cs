@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Business;
@@ -20,15 +21,24 @@ namespace WALimaRooms.Controllers
 
 
         // GET: Cliente/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Inmobiliario inmobi = inmobiliarioService.FindById(id);
+            if (inmobi == null)
+            {
+                return HttpNotFound();
+            }
+            return View(inmobi);
         }
 
         //Get: Cliente/Create
         public ActionResult Create()
         {
-            ViewBag.cliente = inmobiliarioService.FindAll();
+            ViewBag.inmobi = inmobiliarioService.FindAll();
             return View();
         }
 
@@ -36,7 +46,7 @@ namespace WALimaRooms.Controllers
         [HttpPost]
         public ActionResult Create(Inmobiliario inmobi)
         {
-            ViewBag.cliente = inmobiliarioService.FindAll();
+            ViewBag.inmobi = inmobiliarioService.FindAll();
             bool rptainsert = inmobiliarioService.insert(inmobi);
 
             if (rptainsert)
@@ -74,23 +84,39 @@ namespace WALimaRooms.Controllers
         }
 
         // GET: Cliente/Delete/5
-        public ActionResult Delete()
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
-            return View();
+            if (!id.HasValue)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+            Inmobiliario inmobi = inmobiliarioService.FindById(id);
+            if (inmobi == null)
+            {
+                return HttpNotFound();
+            }
+            return View(inmobi);
         }
 
         // POST: Cliente/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
-                return RedirectToAction("Index");
+                Inmobiliario inmobi = inmobiliarioService.FindById(id);
+                inmobiliarioService.Delete(id);
             }
             catch
             {
                 return View();
             }
+            return RedirectToAction("Index");
         }
     }
 }

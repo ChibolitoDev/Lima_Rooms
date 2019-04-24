@@ -177,12 +177,16 @@
     <Content Include="Views\TipoInmobiliario\Details.cshtml" />
     <Content Include="Views\TipoInmobiliario\Edit.cshtml" />
     <Content Include="Views\TipoInmobiliario\Index.cshtml" />
+    <Content Include="Views\Inmobiliario\Create.cshtml" />
+    <Content Include="Views\Inmobiliario\Delete.cshtml" />
+    <Content Include="Views\Inmobiliario\Details.cshtml" />
+    <Content Include="Views\Inmobiliario\Edit.cshtml" />
+    <Content Include="Views\Inmobiliario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Contrato\" />
-    <Folder Include="Views\Inmobiliario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
