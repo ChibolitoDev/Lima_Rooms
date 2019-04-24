@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IClienteRepository.cs" />
     <Compile Include="IContratoRepository.cs" />
     <Compile Include="ICrudRepository.cs" />
     <Compile Include="IInmobiliarioRepository.cs" />
+    <Compile Include="Implementacion\ClienteRepository.cs" />
     <Compile Include="Implementacion\ContratoRepository.cs" />
     <Compile Include="Implementacion\InmobiliarioRepository.cs" />
     <Compile Include="Implementacion\PagoRepository.cs" />

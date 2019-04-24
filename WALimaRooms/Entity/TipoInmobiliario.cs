@@ -10,10 +10,10 @@ namespace Entity
     public class TipoInmobiliario
     {
         [DisplayName("Id. Tipo Inmobiliario")]
-        public int id { get; set; }
+        public int TipoInmobiliarioId { get; set; }
 
         [DisplayName("Nombre")]
-        public string Nombre { get; set; }
+        public string NombreTipoInmobiliario { get; set; }
 
     }
 }

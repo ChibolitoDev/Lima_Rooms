@@ -18,8 +18,8 @@ namespace Entity
         public string NroTransaccion { get; set; }
 
         [Required]
-        [DisplayName("Fecha Pago")]
-        public DateTime FechaPago { get; set; }
+        [DisplayName("Fecha Transaccion")]
+        public DateTime FechaTransaccion { get; set; }
 
         [DisplayName("Cliente")]
         public Contrato Contrato { get; set; }

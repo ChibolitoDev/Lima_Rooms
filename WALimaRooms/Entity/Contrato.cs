@@ -20,15 +20,15 @@ namespace Entity
 
         [Required]
         [DisplayName("Fecha Inicio")]
-        public string fechaInicio { get; set; }
+        public DateTime fechaInicio { get; set; }
 
         [Required]
         [DisplayName("Fecha Fin")]
-        public string fechaFin { get; set; }
+        public DateTime fechaFin { get; set; }
 
         [Required]
         [DisplayName("Fecha Pago")]
-        public string FechaPago { get; set; }
+        public DateTime FechaPago { get; set; }
 
         [Required]
         [DisplayName("Costo Alquiler")]

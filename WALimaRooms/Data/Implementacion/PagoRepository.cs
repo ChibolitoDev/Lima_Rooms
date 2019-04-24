@@ -16,7 +16,36 @@ namespace Data.Implementaciones
 
         public List<Pago> FindAll()
         {
-            throw new NotImplementedException();
+            var tipoInmobiliarios = new List<TipoInmobiliario>();
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("select * from TipoInmobiliario", con);
+
+                    using (var dr = query.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            var tipoInmobiliario = new TipoInmobiliario();
+                            tipoInmobiliario = new TipoInmobiliario();
+                            tipoInmobiliario.TipoInmobiliarioId = Convert.ToInt32(dr[0]);
+                            tipoInmobiliario.NombreTipoInmobiliario = dr["NombreTipoInmobilario"].ToString();
+
+                            tipoInmobiliarios.Add(tipoInmobiliario);
+                        }
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return tipoInmobiliarios;
         }
 
         public Pago FindbyID(int? id)

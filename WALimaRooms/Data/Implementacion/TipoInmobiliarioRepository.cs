@@ -18,25 +18,25 @@ namespace Data.Implementaciones
 
         public List<TipoInmobiliario> FindAll()
         {
-            var clientes = new List<TipoInmobiliario>();
+            var tipoInmobiliarios = new List<TipoInmobiliario>();
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
 
-                    var query = new SqlCommand("select * from Tipo_Inmobiliaria", con);
+                    var query = new SqlCommand("select * from TipoInmobiliario", con);
 
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            var cliente = new TipoInmobiliario();
-                            cliente = new TipoInmobiliario();
-                            cliente.id = Convert.ToInt32(dr["PersonaID"]);
-                            cliente.Nombre = dr["Nombre"].ToString();
+                            var tipoInmobiliario = new TipoInmobiliario();
+                            tipoInmobiliario = new TipoInmobiliario();
+                            tipoInmobiliario.TipoInmobiliarioId = Convert.ToInt32(dr[0]);
+                            tipoInmobiliario.NombreTipoInmobiliario = dr["NombreTipoInmobilario"].ToString();
 
-                            clientes.Add(cliente);
+                            tipoInmobiliarios.Add(tipoInmobiliario);
                         }
                     }
                     con.Close();
@@ -47,27 +47,27 @@ namespace Data.Implementaciones
                 throw;
             }
 
-            return clientes;
+            return tipoInmobiliarios;
         }
 
         public TipoInmobiliario FindbyID(int? id)
         {
 
-            TipoInmobiliario cliente = null;
+            TipoInmobiliario tipoInmobiliario = null;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("select * from Tipo_Inmobiliaria where id='" + id + "'", con);
+                    var query = new SqlCommand("select * from TipoInmobiliario where TipoInmobiliarioId='" + id + "'", con);
 
                     using (var dr = query.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            cliente = new TipoInmobiliario();
-                            cliente.id = Convert.ToInt32(dr["id"]);
-                            cliente.Nombre = dr["Nombre"].ToString();
+                            tipoInmobiliario = new TipoInmobiliario();
+                            tipoInmobiliario.TipoInmobiliarioId = Convert.ToInt32(dr[0]);
+                            tipoInmobiliario.NombreTipoInmobiliario = dr["NombreTipoInmobiliario"].ToString();
 
                         }
                     }
@@ -77,7 +77,7 @@ namespace Data.Implementaciones
             }
             catch (Exception ex) { throw; }
 
-            return cliente;
+            return tipoInmobiliario;
         }
 
         public bool insert(TipoInmobiliario t)
@@ -85,10 +85,10 @@ namespace Data.Implementaciones
             bool rpta = false;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
-                    var query = new SqlCommand("insert into Tipo_Inmobiliaria values (@Nombre)", con);
-                    query.Parameters.AddWithValue("@Nombre", t.Nombre);
+                    var query = new SqlCommand("insert into TipoInmobiliario values (@Nombre)", con);
+                    query.Parameters.AddWithValue("@Nombre", t.NombreTipoInmobiliario);
                     query.ExecuteNonQuery();
                     rpta = true;
                 }
