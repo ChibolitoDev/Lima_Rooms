@@ -9,7 +9,7 @@ namespace Data.Implementaciones
 {
     public class ContratoRepository : IContratoRepository
     {
-        public bool delete(Contrato t)
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }

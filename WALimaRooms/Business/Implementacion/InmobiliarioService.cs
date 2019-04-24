@@ -15,7 +15,7 @@ namespace Business.Implementacion
         private ITipoInmobiliarioRepository tipoInmobiliarioRepository = new TipoInmobiliarioRepository();
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return inmobiliarioRepository.delete(id);
         }
 
         public List<Inmobiliario> FindAll()

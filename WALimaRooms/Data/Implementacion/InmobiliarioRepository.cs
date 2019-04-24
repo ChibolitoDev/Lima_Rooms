@@ -10,8 +10,8 @@ using System.Configuration;
 namespace Data.Implementaciones
 {
     public class InmobiliarioRepository : IInmobiliarioRepository
-    {
-        public bool delete(Inmobiliario t)
+    {     
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }

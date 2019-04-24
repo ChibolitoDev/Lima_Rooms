@@ -10,7 +10,7 @@ namespace Data
     {
         bool insert(T t);
         bool update(T t);
-        bool delete(T t);
+        bool delete(int id);
         List<T> FindAll();
         T FindbyID(int? id);
     }

@@ -11,7 +11,7 @@ namespace Data.Implementaciones
 {
     public class TipoInmobiliarioRepository : ITipoInmobiliarioRepository
     {
-        public bool delete(TipoInmobiliario t)
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }
