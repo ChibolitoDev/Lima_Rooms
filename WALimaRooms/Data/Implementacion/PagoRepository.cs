@@ -11,7 +11,7 @@ namespace Data.Implementaciones
 {
     public class PagoRepository : IPagoRepository
     {
-        public bool delete(Pago t)
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }

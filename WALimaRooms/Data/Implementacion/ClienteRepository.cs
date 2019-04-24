@@ -11,7 +11,7 @@ namespace Data.Implementacion
 {
     public class ClienteRepository : IClienteRepository
     {
-        public bool delete(Cliente t)
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }

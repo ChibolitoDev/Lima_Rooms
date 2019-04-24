@@ -15,7 +15,7 @@ namespace Business.Implementacion
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return tipoInmobiliario.delete(id);
         }
 
         public List<TipoInmobiliario> FindAll()
