@@ -34,14 +34,13 @@ namespace Data.Implementaciones
 
         public List<TipoInmobiliario> FindAll()
         {
-            var tipoInmobiliarios = new List<TipoInmobiliario>();
+            var tipos = new List<TipoInmobiliario>();
             try
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-
-                    var query = new SqlCommand("select * from TipoInmobilario", con);
+                    var query = new SqlCommand("select* from TipoInmobilario", con);
 
                     using (var dr = query.ExecuteReader())
                     {
@@ -49,20 +48,20 @@ namespace Data.Implementaciones
                         {
                             var tipo = new TipoInmobiliario();
                             tipo.TipoInmobiliarioId = Convert.ToInt32(dr[0]);
-                            tipo.NombreTipoInmobiliario = dr["NombreTipoInmobilario"].ToString();
+                            tipo.NombreTipoInmobiliario = dr["NombreTipoInmobiliario"].ToString();
+                            
 
-                            tipoInmobiliarios.Add(tipo);
+                            tipos.Add(tipo);
                         }
                     }
                     con.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 throw;
             }
-
-            return tipoInmobiliarios;
+            return tipos;
         }
 
         public TipoInmobiliario FindbyID(int? id)
@@ -103,7 +102,7 @@ namespace Data.Implementaciones
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("insert into TipoInmobilario values (@TipoInmobiliarioId,@NombreTipoInmobiliario)", con);
+                    var query = new SqlCommand("SET IDENTITY_INSERT TipoInmobilario ON insert into TipoInmobilario values (@TipoInmobiliarioId,@NombreTipoInmobiliario)", con);
                     query.Parameters.AddWithValue("@TipoInmobiliarioId", t.TipoInmobiliarioId);
                     query.Parameters.AddWithValue("@NombreTipoInmobiliario", t.NombreTipoInmobiliario);
                     query.ExecuteNonQuery();
