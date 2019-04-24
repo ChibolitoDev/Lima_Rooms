@@ -30,8 +30,8 @@ namespace Business.Implementacion
 
         public bool insert(Inmobiliario t)
         {
-            TipoInmobiliario tipoInmobiliario = tipoInmobiliarioRepository.FindbyID(t.tipoI.id);
-            t.tipoI = tipoInmobiliario;
+            TipoInmobiliario tipoInmobiliario = tipoInmobiliarioRepository.FindbyID(t.tipoInmobiliario.TipoInmobiliarioId);
+            t.tipoInmobiliario = tipoInmobiliario;
             return inmobiliarioRepository.insert(t);
         }
 
