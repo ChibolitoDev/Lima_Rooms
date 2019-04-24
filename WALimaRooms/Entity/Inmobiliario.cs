@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,20 +10,23 @@ namespace Entity
 {
     public class Inmobiliario
     {
-        [DisplayName("Id")]
-        public int id { get; set; }
+        [DisplayName("Id. Inmobiliario")]
+        public int InmobiliarioId { get; set; }
 
-        TipoInmobiliario Tipo_Inm;
+        [Required]
+        [DisplayName("Nombre Inmobiliario")]
+        public string NombreInmobiliario { get; set; }
 
-        [DisplayName("Nombre")]
-        public string Nombre { get; set; }
-
+        [Required]
         [DisplayName("Direccion")]
-        public string Direccion { get; set; }
+        public string DireccionInmobiliario { get; set; }
 
+        [Required]
         [DisplayName("Precio")]
         public int Precio { get; set; }
 
-        public TipoInmobiliario tipoI;
+        [DisplayName("Tipo Inmobiliario")]
+        public TipoInmobiliario tipoInmobiliario { get; set; }
+
     }
 }

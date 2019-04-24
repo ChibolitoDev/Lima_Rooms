@@ -9,7 +9,7 @@ namespace Entity
 {
     public class TipoInmobiliario
     {
-        [DisplayName("Id")]
+        [DisplayName("Id. Tipo Inmobiliario")]
         public int id { get; set; }
 
         [DisplayName("Nombre")]

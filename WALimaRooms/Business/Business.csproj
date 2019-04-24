@@ -41,14 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IClienteService.cs" />
     <Compile Include="IContratoService.cs" />
     <Compile Include="ICrudService.cs" />
-    <Compile Include="IGuardiaService.cs" />
     <Compile Include="IImboliarioService.cs" />
-    <Compile Include="Implementacion\ClienteService.cs" />
     <Compile Include="Implementacion\ContratoService.cs" />
-    <Compile Include="Implementacion\GuardiaService.cs" />
     <Compile Include="Implementacion\InmobiliarioService.cs" />
     <Compile Include="Implementacion\PagoService.cs" />
     <Compile Include="Implementacion\TipoInmobiliarioService.cs" />
