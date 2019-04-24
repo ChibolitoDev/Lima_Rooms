@@ -102,8 +102,7 @@ namespace Data.Implementaciones
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
-                    var query = new SqlCommand("SET IDENTITY_INSERT TipoInmobilario ON insert into TipoInmobilario values (@TipoInmobiliarioId,@NombreTipoInmobiliario)", con);
-                    query.Parameters.AddWithValue("@TipoInmobiliarioId", t.TipoInmobiliarioId);
+                    var query = new SqlCommand("insert into TipoInmobilario values (@NombreTipoInmobiliario)", con);                   
                     query.Parameters.AddWithValue("@NombreTipoInmobiliario", t.NombreTipoInmobiliario);
                     query.ExecuteNonQuery();
                     rpta = true;

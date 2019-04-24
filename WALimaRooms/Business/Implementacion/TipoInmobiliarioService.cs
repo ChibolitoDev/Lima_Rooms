@@ -12,7 +12,7 @@ namespace Business.Implementacion
     public class TipoInmobiliarioService : ITipoInmobiliarioService
     {
         private ITipoInmobiliarioRepository tipoInmobiliario = new TipoInmobiliarioRepository();
-
+        private IInmobiliarioRepository inmobiRepository = new InmobiliarioRepository();
         public bool Delete(int id)
         {
             return tipoInmobiliario.delete(id);
@@ -29,7 +29,7 @@ namespace Business.Implementacion
         }
 
         public bool insert(TipoInmobiliario t)
-        {
+        { 
             return tipoInmobiliario.insert(t);
         }
 
