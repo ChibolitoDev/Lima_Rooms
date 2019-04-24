@@ -9,7 +9,7 @@ using Entity;
 
 namespace Business.Implementacion
 {
-    class ClienteService : IClienteService
+    public class ClienteService : IClienteService
     {
         private IClienteRepository clienteRepository = new ClienteRepository();
         public bool Delete(int id)

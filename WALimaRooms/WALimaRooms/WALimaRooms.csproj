@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ContratoController.cs" />
     <Compile Include="Controllers\InmobiliarioController.cs" />
     <Compile Include="Controllers\PagoController.cs" />
@@ -204,6 +205,10 @@
     <ProjectReference Include="..\Business\Business.csproj">
       <Project>{7533537f-cff5-48ef-bd8e-e797a7208bfe}</Project>
       <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{9c3e3f04-5100-43bc-a5aa-bf7d268c807c}</Project>
+      <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{487758eb-7f8e-4de5-941d-8e86d9335a61}</Project>

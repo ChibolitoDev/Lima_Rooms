@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    interface IClienteService : ICrudService<Cliente>
+    public interface IClienteService : ICrudService<Cliente>
     {
     }
 }
