@@ -13,7 +13,22 @@ namespace Data.Implementacion
     {
         public bool delete(int id)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
+                {
+                    con.Open();
+                    var query = new SqlCommand("delete from Cliente where ClienteId='"+id+"'", con);
+                    query.Parameters.AddWithValue("@ClienteId", Convert.ToInt32(id));
+                    query.ExecuteNonQuery();
+                    rpta = true;
+                }
+            }catch(Exception ex)
+            {
+                throw;
+            }
+            return rpta;
         }
 
         public List<Cliente> FindAll()
@@ -55,7 +70,7 @@ namespace Data.Implementacion
             Cliente cliente = null;
             try
             {
-                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["Lima_Rooms"].ToString()))
+                using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
                     con.Open();
                     var query = new SqlCommand("select * from Cliente where ClienteId='" + id + "'", con);
@@ -65,7 +80,7 @@ namespace Data.Implementacion
                         while (dr.Read())
                         {
                             cliente = new Cliente();
-                            cliente.ClienteId = Convert.ToInt32(dr[0]);
+                            cliente.ClienteId = Convert.ToInt32(dr["ClienteId"]);
                             cliente.NombreCliente = dr["NombreCliente"].ToString();
                             cliente.apellPaterno = dr["apellPaterno"].ToString();
                             cliente.apellMaterno = dr["apellMaterno"].ToString();
@@ -90,9 +105,11 @@ namespace Data.Implementacion
             {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
                 {
-                    var query = new SqlCommand("insert into Cliente values (@NombreCliente," +
+                    con.Open();
+                    var query = new SqlCommand("insert into Cliente values (@ClienteId,@NombreCliente," +
                         "                        @apellPaterno, @apellMaterno, @Nacionalidad, @Phone," +
                         "                        @email)", con);
+                    query.Parameters.AddWithValue("@ClienteId", t.ClienteId);
                     query.Parameters.AddWithValue("@NombreCliente", t.NombreCliente);
                     query.Parameters.AddWithValue("@apellPaterno", t.apellPaterno);
                     query.Parameters.AddWithValue("@apellMaterno", t.apellPaterno);
@@ -103,7 +120,7 @@ namespace Data.Implementacion
                     rpta = true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
@@ -114,7 +131,34 @@ namespace Data.Implementacion
 
         public bool update(Cliente t)
         {
-            throw new NotImplementedException();
+            bool rpta = false;
+            try
+            {
+                using(var con = new SqlConnection(ConfigurationManager.ConnectionStrings["WALimaRooms"].ToString()))
+                {
+                    con.Open();
+
+                    var query = new SqlCommand("update Cliente set " +
+                        "NombreCliente=@NombreCompleto, apellPaterno=@apellPaterno, apellMaterno=@apellMaterno," +
+                        "Nacionalidad=@Nacionalidad, Phone=@Phone, Email=@Email where ClienteId=@ClienteId", con);
+
+                    query.Parameters.AddWithValue("@ClienteId", t.ClienteId);
+                    query.Parameters.AddWithValue("@NombreCompleto", t.NombreCliente);
+                    query.Parameters.AddWithValue("@apellPaterno", t.apellPaterno);
+                    query.Parameters.AddWithValue("@apellMaterno", t.apellMaterno);
+                    query.Parameters.AddWithValue("@Nacionalidad", t.Nacionalidad);
+                    query.Parameters.AddWithValue("@Phone", t.Telefono);
+                    query.Parameters.AddWithValue("@Email", t.Correo);
+
+                    query.ExecuteNonQuery();
+
+                    rpta = true;
+                }
+            }catch(Exception ex)
+            {
+                throw;
+            }
+            return rpta;
         }
     }
 }

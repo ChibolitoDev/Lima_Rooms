@@ -167,26 +167,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\CrearCliente.cshtml" />
-    <Content Include="Views\ListarCliente.cshtml" />
-    <Content Include="Views\EliminarCliente.cshtml" />
-    <Content Include="Views\CrearContrato.cshtml" />
-    <Content Include="Views\ListarContrato.cshtml" />
-    <Content Include="Views\EliminarContrato.cshtml" />
-    <Content Include="Views\CrearInmobiliario.cshtml" />
-    <Content Include="Views\ListarInmobiliario.cshtml" />
-    <Content Include="Views\EliminarInmobiliario.cshtml" />
-    <Content Include="Views\CrearTipoInm.cshtml" />
-    <Content Include="Views\ListarTipoInm.cshtml" />
-    <Content Include="Views\EliminarTipoInm.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\TipoInmobiliario\Create.cshtml" />
+    <Content Include="Views\TipoInmobiliario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cliente\" />
     <Folder Include="Views\Contrato\" />
     <Folder Include="Views\Inmobiliario\" />
-    <Folder Include="Views\TipoInmobiliario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

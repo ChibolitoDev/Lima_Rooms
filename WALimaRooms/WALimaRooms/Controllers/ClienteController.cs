@@ -18,6 +18,34 @@ namespace WALimaRooms.Controllers
             return View(clienteService.FindAll());
         }
 
+
+        // GET: Cliente/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        //Get: Cliente/Create
+        public ActionResult Create()
+        {
+            ViewBag.cliente = clienteService.FindAll();
+            return View();
+        }
+
+        // POST: Cliente/Create
+        [HttpPost]
+        public ActionResult Create(Cliente cliente)
+        {
+            ViewBag.cliente = clienteService.FindAll();
+            bool rptainsert = clienteService.insert(cliente);
+
+            if (rptainsert)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        // GET: Cliente/Edit
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -29,6 +57,8 @@ namespace WALimaRooms.Controllers
             return View(cliente);
         }
 
+        // POST: Cliente/Edit
+        [HttpPost]
         public ActionResult Edit(Cliente client)
         {
             if (!ModelState.IsValid)
@@ -41,6 +71,26 @@ namespace WALimaRooms.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        // GET: Cliente/Delete/5
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
+        // POST: Cliente/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
